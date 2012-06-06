@@ -9,7 +9,7 @@
     <h1>Rently - A Place for Renters and Landlords to Connect</h1>
     <% if signed_in? -%>
       <%= link_to "Sign out", sign_out_path, :method => :delete %>
-      Welcome <%= current_user.name %>. You are a <%= current_user.role %>.
+      Welcome <%= current_user.name %>
     <% else -%>
       <%= link_to "Sign in", sign_in_path %>
     <% end -%>
