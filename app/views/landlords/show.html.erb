@@ -1,5 +1,5 @@
 <h2>Your Listed Apartments</h2>
 <% @landlord.apartments.each do |apartment| %>
   <%= link_to apartment.address, apartment %>
-  <%= apartment.rent %>
+  <%= "$#{apartment.rent}" %>
 <% end -%>
