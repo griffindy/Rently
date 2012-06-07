@@ -1,3 +1,6 @@
 <%= @apartment.address %>
 <%= @apartment.rent %>
 <%= @apartment.landlord.name %>
+<% if @apartment.landlord = current_user -%>
+  <%= link_to "edit", edit_apartment_path %>
+<% end -%>

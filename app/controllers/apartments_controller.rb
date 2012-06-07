@@ -27,4 +27,9 @@ class ApartmentsController < ApplicationController
     apartment.update_attributes(params[:apartment])
     redirect_to edit_apartment_path(apartment.id), notice: "Updated!"
   end
+
+  def destroy
+    Apartment.find(params[:id]).destroy
+    redirect_to landlord_path(current_user.id)
+  end
 end
