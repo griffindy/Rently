@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   def can_edit?(apt)
     apartments.include?(apt)
   end
+
+  def return_apartments
+    apartments
+  end
 end
