@@ -1,10 +1,13 @@
 FactoryGirl.define do
-  landlord = User.new({name: 'Dylan Griffin', email: 'joe@example.com', password: 'password', role: 'landlord'})
-  tenant = User.new({name: 'Dylan Griffin', email: 'joe@example.com', password: 'password', role: 'tenant'})
-  factory :landlord do
-    initialize_with { landlord }
+  factory :landlord, class: User do
+    name "Dylan Griffin"
+    role "landlord"
+    email "griffindy@gmail.com"
+    password "password"
   end
-  factory :tenant do
-    initialize_with { tenant }
+
+  factory :apartment do
+    address "97 walden street"
+    rent "1600"
   end
 end

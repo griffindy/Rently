@@ -1,8 +1,5 @@
 class ApartmentsController < ApplicationController
 
-  def index
-  end
-
   def new
     @apartment = Apartment.new
   end

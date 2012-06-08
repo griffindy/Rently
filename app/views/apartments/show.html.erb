@@ -1,6 +1,9 @@
 <%= @apartment.address %>
 <%= @apartment.rent %>
 <%= @apartment.landlord.name %>
-<% if @apartment.landlord = current_user -%>
+<% if @apartment.landlord.can_edit? -%>
   <%= link_to "edit", edit_apartment_path %>
 <% end -%>
+<%= if current_user.role == 'tenant' %>
+  <%= button_to "favorite", favorite_path %>
+
