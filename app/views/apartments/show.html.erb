@@ -4,4 +4,9 @@
 <% if current_user.can_edit?(@apartment) %>
   <%= link_to "edit", edit_apartment_path %>
 <% end -%>
-
+<%# <%= if can_favorite?(current_user) %>
+<%#   <%= form_tag("/tenants/#{current_user.id}/favorites") do %>
+<%#     <%= hidden_field_tag(:apt_id, @apartment.id) %>
+<%#     <%= submit_tag "favorite" %>
+<%#   <% end -%>
+<%# <% end -%>

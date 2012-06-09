@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   def can_edit?(apt)
     apartments.include?(apt)
   end
+
+  def can_favorite?(apt)
+    favorites.include?(apt)
+  end
 end

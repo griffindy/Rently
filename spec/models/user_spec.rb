@@ -21,4 +21,11 @@ describe User do
     apt = create(:apartment)
     landlord.can_edit?(apt).should be_false
   end
+
+  it "#can_favorite? should return false if the tenant has already favorited the apartment" do
+    tenant = create(:tenant)
+    apt = create(:apartment)
+    tenant.favorites.new(apt)
+    tenant.can_favorite?(apt).should be_false
+  end
 end
