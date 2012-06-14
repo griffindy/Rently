@@ -1,3 +1,4 @@
+
 Given /^an apartment$/ do
   @apt = FactoryGirl.create(:apartment)
 end
@@ -7,5 +8,5 @@ When /^I add photos to the apartment$/ do
 end
 
 Then /^the apartment should have photos$/ do
-  @apt.photos.should be
+  @apt.photos.first.should be
 end

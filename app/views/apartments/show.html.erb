@@ -10,3 +10,6 @@
 <%#     <%= submit_tag "favorite" %>
 <%#   <% end -%>
 <%# <% end -%>
+<%= @apartment.photos.each do |photo| %>
+  <%= image_tag @photo.photo.url %>
+<% end -%>
