@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120607183429) do
+ActiveRecord::Schema.define(:version => 20120614180845) do
 
   create_table "apartments", :force => true do |t|
     t.string  "address"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(:version => 20120607183429) do
   create_table "landlords", :force => true do |t|
     t.string "name"
     t.string "email"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.integer  "apartment_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", :force => true do |t|
