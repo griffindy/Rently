@@ -1,14 +1,14 @@
 FactoryGirl.define do
-  factory :landlord, class: User do
+  factory :Landlord, class: User do
     name "Dylan Griffin"
-    role "landlord"
+    type "Landlord"
     email "griffindy@gmail.com"
     password "password"
   end
 
-  factory :tenant, class: User do
+  factory :Tenant, class: User do
     name "Dylan Griffin"
-    role "tenant"
+    type "Tenant"
     email "griffindy@gmail.com"
     password "password"
   end

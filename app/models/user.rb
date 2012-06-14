@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   include Clearance::User
-  attr_accessible :email, :role, :name, :password
-  validates :email, :role, :name, presence: true
+  attr_accessible :email, :type, :name, :password
+  validates :email, :type, :name, presence: true
   has_many :apartments, foreign_key: "landlord_id"
   has_many :favorites, foreign_key: "tenant_id"
 
@@ -11,5 +11,9 @@ class User < ActiveRecord::Base
 
   def can_favorite?(apt)
     favorites.include?(apt)
+  end
+
+  def self.select_options
+    descendants.map { |user| user.to_s }.sort
   end
 end

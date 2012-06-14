@@ -1,4 +1,3 @@
-
 Given /^an apartment$/ do
   @apt = FactoryGirl.create(:apartment)
 end
