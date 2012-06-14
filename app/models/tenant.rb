@@ -1,6 +1,2 @@
-class Tenant
-  def initialize(user)
-    @user = user
-  end
-
+class Tenant < User
 end
