@@ -2,13 +2,18 @@ class ApartmentsController < ApplicationController
 
   def new
     @apartment = Apartment.new
+    @apartment.photos.build
   end
 
   def create
-    apartment = params[:apartment]
-    apartment["landlord_id"] = current_user.id
-    new_apartment = Apartment.create(apartment)
-    redirect_to edit_apartment_path(new_apartment.id), notice: "Apartment Created!"
+    @apartment = Apartment.new(params[:apartment])
+    @apartment["landlord_id"] = current_user.id
+    if @apartment.save
+      redirect_to edit_apartment_path(@apartment), notice: "Apartment Created!"
+    else
+      flash[:notice] = @apartment.errors
+      redirect_to new_apartment_path
+    end
   end
 
   def show

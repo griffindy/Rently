@@ -1,4 +1,5 @@
 <h2>Your Listed Apartments</h2>
+<%= link_to "Create a new Listing", new_apartment_path %><br />
 <% @landlord.apartments.each do |apartment| %>
   <%= link_to apartment.address, apartment %>
   <%= "$#{apartment.rent}" %>
