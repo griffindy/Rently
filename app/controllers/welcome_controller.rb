@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
   def check_for_user
     if signed_in?
       #this is ugly, especially with the s adding on after the type
-      redirect_to "/#{current_user.type.downcase}s/#{current_user.id}"
+      redirect_to current_user.becomes(current_user.type.constantize)
     end
   end
 end
