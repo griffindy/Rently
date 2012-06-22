@@ -1,5 +1,6 @@
 <h2>Your Favorites</h2>
 <% @tenant.favorites.each do |fav| -%>
-  <%= link_to fav.apartment.address, apartment_path(fav.apartment.id) %>
-  <%= button_to "delete favorite", tenant_favorite_path(fav.id), method: :delete %>
+  <%= link_to fav.apartment.address, apartment_path(fav.apartment_id) %>
+  <%= link_to "delete favorite", tenant_favorite_path(fav), method: :delete %>
+  <%= fav.id %>
 <% end -%>

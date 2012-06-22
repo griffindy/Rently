@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates :email, :type, :name, presence: true
   has_many :apartments, foreign_key: "landlord_id"
   has_many :favorites, foreign_key: "tenant_id"
+  attr_accessor :type
 
   def can_edit?(apt)
     apartments.include?(apt)
@@ -11,6 +12,7 @@ class User < ActiveRecord::Base
 
   def can_favorite?(apt)
     favorites.include?(apt)
+    false
   end
 
   def self.select_options
