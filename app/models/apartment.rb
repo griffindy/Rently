@@ -6,7 +6,7 @@ class Apartment < ActiveRecord::Base
   has_many :photos
   accepts_nested_attributes_for :photos
 
-  def can_edit?(landlord)
+  def can_edit?(landlord, current_user)
     landlord.id == current_user.id
   end
 end

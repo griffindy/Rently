@@ -2,21 +2,21 @@ FactoryGirl.define do
   factory :site_user, class: User do
     name "Dylan Griffin"
     type "Landlord"
-    email "griffindy@gmail.com"
+    email
     password "password"
   end
 
   factory :landlord do
     name "Dylan Griffin"
     type "Landlord"
-    email "griffindy@gmail.com"
+    email
     password "password"
   end
 
   factory :tenant do
     name "Dylan Griffin"
     type "Tenant"
-    email "griffindy@gmail.com"
+    email
     password "password"
   end
 

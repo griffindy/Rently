@@ -1,10 +1,6 @@
 require "spec_helper"
 
 describe WelcomeController do
-  it "responds with success when not signed in" do
-    get :index
-    response.should be_success
-  end
 
   it "redirects to the landlord's list if a landlord" do
     landlord = create(:landlord)
