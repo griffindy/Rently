@@ -10,6 +10,8 @@ class WelcomeController < ApplicationController
     if signed_in?
       #this is ugly, especially with the s adding on after the type
       redirect_to current_user.becomes(current_user.type.constantize)
+    else
+      redirect_to sign_in_path
     end
   end
 end
