@@ -6,13 +6,15 @@
   <%= f.label :zip %>
   <%= f.text_field :zip %>
   <%= f.label :state %>
-  <%= f.text_field :state %>
+  <%= f.select :state, us_states %>
   <%= f.label :rent %>
   <%= f.text_field :rent %>
   <%= f.label :bedrooms %>
   <%= f.text_field :bedrooms %>
   <%= f.label :bathrooms %>
   <%= f.text_field :bathrooms %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
   <%= f.fields_for :photos do |photo| %>
     <%= photo.file_field :photo %>
   <% end -%>
