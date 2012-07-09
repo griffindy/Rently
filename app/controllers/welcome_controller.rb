@@ -9,8 +9,8 @@ class WelcomeController < ApplicationController
   def check_for_user
     if signed_in?
       redirect_to dashboard_path
-    else
-      redirect_to sign_in_path
+    # else
+    #   redirect_to sign_in_path
     end
   end
 end
