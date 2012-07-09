@@ -9,6 +9,8 @@
   <%= f.text_field :rent %>
   <%= f.label :bedrooms %>
   <%= f.text_field :bedrooms %>
+  <%= f.label :bathrooms %>
+  <%= f.text_field :bathrooms %>
   <%= f.fields_for :photos do |photo| %>
     <%= photo.file_field :photo %>
   <% end -%>

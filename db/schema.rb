@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120706185219) do
+ActiveRecord::Schema.define(:version => 20120709130920) do
 
   create_table "apartments", :force => true do |t|
     t.string  "address"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120706185219) do
     t.boolean "cats"
     t.boolean "dogs"
     t.integer "bedrooms"
+    t.integer "bathrooms"
   end
 
   create_table "favorites", :force => true do |t|
