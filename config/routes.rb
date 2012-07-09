@@ -5,4 +5,5 @@ Rently::Application.routes.draw do
   resources :tenants do
     resources :favorites
   end
+  resource :dashboard, only: [:show]
 end

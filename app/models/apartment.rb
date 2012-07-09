@@ -1,5 +1,5 @@
 class Apartment < ActiveRecord::Base
-  attr_accessible :address, :rent, :city, :zip, :landlord_id, :photos_attributes
+  attr_accessible :address, :rent, :city, :zip, :landlord_id, :photos_attributes, :bedrooms
   belongs_to :landlord, class_name: 'User'
   validates :address, :rent, presence: true
   has_many :favorites

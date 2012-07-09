@@ -1,7 +1,7 @@
 <h2>Your Listed Apartments</h2>
 <%= link_to "Create a new Listing", new_apartment_path %><br />
 <ul>
-  <% @landlord.apartments.each do |apartment| %>
+  <% current_user.apartments.each do |apartment| %>
     <li>
       <%= link_to apartment.address, apartment %>
       <%= "$#{apartment.rent}" %>
