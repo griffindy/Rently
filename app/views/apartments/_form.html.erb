@@ -33,11 +33,7 @@
   </li>
   <li>
     <%= f.fields_for :photos, @new_photos do |photo| %>
-      <% if photo.object.new_record? -%>
-        <%= photo.file_field :photo %>
-      <% else %>
-        <%= link_to image_tag(photo.object.photo.url(:thumb)), photo.object.photo.url %>
-      <% end -%>
+      <%= photo.file_field :photo %>
     <% end -%>
   </li>
   <li>
