@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709145707) do
+ActiveRecord::Schema.define(:version => 20120710185709) do
 
   create_table "apartments", :force => true do |t|
     t.string  "address"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20120709145707) do
 
   create_table "favorites", :force => true do |t|
     t.integer "apartment_id"
-    t.integer "tenant_id"
+    t.integer "user_id"
   end
 
   create_table "landlords", :force => true do |t|

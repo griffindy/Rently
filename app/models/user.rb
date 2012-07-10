@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :type, :name, :password
   validates :email, :type, :name, presence: true
   has_many :apartments, foreign_key: "landlord_id", dependent: :destroy
-  has_many :favorites, foreign_key: "tenant_id", dependent: :destroy
-  # has_many :favorited_apartments
+  has_many :favorites
+  has_many :favorited_apartments, through: :favorites, source: :apartment
   attr_accessor :type
 
   def can_edit?(apartment)
