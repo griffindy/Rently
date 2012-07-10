@@ -12,5 +12,5 @@
 </div>
 <div class="select_field">
   <%= form.label :user_type %>
-  <%= form.select :user_type, User.select_options %>
+  <%= form.select :user_type, User::USER_TYPES %>
 </div>
