@@ -1,22 +1,46 @@
-<%= form_for @apartment, html: { multipart: true } do |f| %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :city %>
-  <%= f.text_field :city %>
-  <%= f.label :zip %>
-  <%= f.text_field :zip %>
-  <%= f.label :state %>
-  <%= f.select :state, us_states %>
-  <%= f.label :rent %>
-  <%= f.text_field :rent %>
-  <%= f.label :bedrooms %>
-  <%= f.text_field :bedrooms %>
-  <%= f.label :bathrooms %>
-  <%= f.text_field :bathrooms %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <%= f.fields_for :photos do |photo| %>
-    <%= photo.file_field :photo %>
-  <% end -%>
-  <%= submit_tag 'submit' %>
+<%= form_for @apartment do |f| %>
+  <li>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </li>
+  <li>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </li>
+  <li>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+  </li>
+  <li>
+    <%= f.label :state %>
+    <%= datalist f, :state, us_states %>
+  </li>
+  <li>
+    <%= f.label :rent %>
+    <%= f.text_field :rent %>
+  </li>
+  <li>
+    <%= f.label :bedrooms %>
+    <%= f.text_field :bedrooms %>
+  </li>
+  <li>
+    <%= f.label :bathrooms %>
+    <%= f.text_field :bathrooms %>
+  </li>
+  <li>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </li>
+  <li>
+    <%= f.fields_for :photos, @new_photos do |photo| %>
+      <% if photo.object.new_record? -%>
+        <%= photo.file_field :photo %>
+      <% else %>
+        <%= link_to image_tag(photo.object.photo.url(:thumb)), photo.object.photo.url %>
+      <% end -%>
+    <% end -%>
+  </li>
+  <li>
+    <%= submit_tag 'submit' %>
+  </li>
 <% end -%>

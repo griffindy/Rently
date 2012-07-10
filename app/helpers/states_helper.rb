@@ -53,6 +53,6 @@ module StatesHelper
         ['West Virginia', 'WV'],
         ['Wisconsin', 'WI'],
         ['Wyoming', 'WY']
-      ]
+      ].map { |list| list[0] }
   end
 end

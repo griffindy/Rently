@@ -1,42 +1,47 @@
 class ApartmentsController < ApplicationController
 
   def index
-    @apartments = Apartment.all
+    @apartments = Apartment.all # all is bad mmkay
   end
 
   def new
     @apartment = Apartment.new
-    @apartment.photos.build
+    5.times { @apartment.photos.build }
   end
 
   def create
-    @apartment = Apartment.new(params[:apartment])
-    @apartment["landlord_id"] = current_user.id
+    @apartment = current_user.apartments.new(params[:apartment])
     if @apartment.save
-      redirect_to edit_apartment_path(@apartment), notice: "Apartment Created!"
+      redirect_to [:edit, @apartment], notice: "Apartment Created!"
     else
-      flash[:notice] = @apartment.errors
-      redirect_to new_apartment_path
+      # TODO: You will want to display errors on the photo objects
+      @photos = @apartment.photos
+      @new_photos = 5.times { @apartment.photos.build }
+      render :new
     end
   end
 
   def show
     @apartment = Apartment.find(params[:id])
-    @favorite = current_user.favorites.new
   end
 
   def edit
     @apartment = current_user.apartments.find(params[:id])
+    @photos = @apartment.photos
+    @new_photos = 5.times { @apartment.photos.build }
   end
 
   def update
-    apartment = Apartment.find(params[:id])
-    apartment.update_attributes(params[:apartment])
-    redirect_to edit_apartment_path(apartment.id), notice: "Updated!"
+    @apartment = Apartment.find(params[:id])
+    if @apartment.update_attributes(params[:apartment])
+      redirect_to [:edit, @apartment], notice: "Updated!"
+    else
+      render :edit
+    end
   end
 
   def destroy
     Apartment.find(params[:id]).destroy
-    redirect_to landlord_path(current_user.id)
+    redirect_to dashboard_path
   end
 end

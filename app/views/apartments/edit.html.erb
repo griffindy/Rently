@@ -1,1 +1,6 @@
+<% if @apartment.errors.any? -%>
+  <% @apartment.errors.full_messages.each do |error| -%>
+    <%= error %>
+  <% end -%>
+<% end -%>
 <%= render 'form' %>

@@ -11,5 +11,5 @@
   <% end -%>
 <% end -%>
 <% @apartment.photos.each do |photo| %>
-  <%= image_tag photo.photo.url %>
+  <%= image_tag photo.photo.url(:thumb) %>
 <% end -%>
