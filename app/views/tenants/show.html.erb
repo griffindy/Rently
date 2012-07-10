@@ -1,7 +1,5 @@
 <h2>Your Favorites</h2>
-<% @tenant.favorites.each do |fav| -%>
-  <%= link_to fav.apartment.address, apartment_path(fav.apartment_id) %>
+<% @tenant.favorited_apartments.each do |apartment| -%>
+  <%= link_to apartment.address, apartment_path(apartment_id) %>
   <%= link_to "delete favorite", "#{current_user.id}/favorites/#{fav.id}", method: :delete %>
-  <%# <%= link_to "delete favorite", tenant_favorite_path(fav.id), method: :delete %>
-  <%# <%= I really want this to work, but it doesn't, it prints the tenant id %>
 <% end -%>
