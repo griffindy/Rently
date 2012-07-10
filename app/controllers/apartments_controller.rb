@@ -16,7 +16,7 @@ class ApartmentsController < ApplicationController
     else
       # TODO: You will want to display errors on the photo objects
       @photos = @apartment.photos
-      @new_photos = 5.times { @apartment.photos.build }
+      @new_photos = 5.times.map { @apartment.photos.build }
       render :new
     end
   end
@@ -28,7 +28,7 @@ class ApartmentsController < ApplicationController
   def edit
     @apartment = current_user.apartments.find(params[:id])
     @photos = @apartment.photos
-    @new_photos = 5.times { @apartment.photos.build }
+    @new_photos = 5.times.map { @apartment.photos.build }
   end
 
   def update
