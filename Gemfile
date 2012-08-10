@@ -17,6 +17,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'shoulda-matchers', '~> 1.2.0'
 end
 
 # Gems used only for assets and not required
