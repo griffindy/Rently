@@ -5,3 +5,5 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rently::Application.load_tasks
+
+task default: [:spec, :cucumber]
