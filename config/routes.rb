@@ -6,4 +6,5 @@ Rently::Application.routes.draw do
     resources :favorites
   end
   resource :dashboard, only: [:show]
+  resources :users, controller: 'users', only: [:create]
 end

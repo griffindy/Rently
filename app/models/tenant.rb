@@ -7,4 +7,7 @@ class Tenant < User
     !apt_ids.include? apt.id
   end
 
+  def dashboard_type
+    'tenant'
+  end
 end

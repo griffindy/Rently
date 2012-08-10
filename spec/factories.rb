@@ -1,23 +1,20 @@
 FactoryGirl.define do
-  factory :site_user, class: User do
-    name "Dylan Griffin"
-    type "Landlord"
-    email
-    password "password"
+  sequence :email do |n|
+    "user#{n}@example.com"
   end
 
-  factory :landlord do
+  factory :user do
     name "Dylan Griffin"
-    type "Landlord"
     email
     password "password"
-  end
 
-  factory :tenant do
-    name "Dylan Griffin"
-    type "Tenant"
-    email
-    password "password"
+    factory :landlord, class: User do
+      type "Landlord"
+    end
+
+    factory :tenant, class: User do
+      type "Tenant"
+    end
   end
 
   factory :apartment do

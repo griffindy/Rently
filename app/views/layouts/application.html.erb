@@ -13,6 +13,7 @@
       Welcome <%= link_to current_user.name, dashboard_path %>
     <% else -%>
       <%= link_to "Sign in", sign_in_path %>
+      <%= link_to "Sign up", sign_up_path %>
     <% end -%>
   </div>
   <div id="flash">

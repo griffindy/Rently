@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   has_many :apartments, foreign_key: "landlord_id", dependent: :destroy
   has_many :favorites
   has_many :favorited_apartments, through: :favorites, source: :apartment
-  attr_accessor :type
 
   def can_edit?(apartment)
     apartment.landlord_id == id
@@ -15,5 +14,9 @@ class User < ActiveRecord::Base
   def can_favorite?(apartment)
     # favorited_apartment_ids.include?(apartment.id)
     favorites.none? { |favorite| favorite.apartment_id == apartment.id }
+  end
+
+  def dashboard_type
+    type.downcase
   end
 end

@@ -26,3 +26,15 @@ describe User do
     tenant.can_favorite?(apt).should be_true
   end
 end
+
+describe User, '#dashboard_type' do
+  it 'returns "tenant" for a tenant' do
+    tenant = build_stubbed(:tenant)
+    tenant.dashboard_type.should == 'tenant'
+  end
+
+  it 'returns "landlord" for a landlord' do
+    landlord = build_stubbed(:landlord)
+    landlord.dashboard_type.should == 'landlord'
+  end
+end
