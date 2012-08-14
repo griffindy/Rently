@@ -19,5 +19,5 @@ describe Apartment, 'associations' do
 end
 
 describe Apartment, 'nested attributes' do
-  it { should accept_nested_attributes_for(:photos).allow_destroy(:true) }
+  it { should accept_nested_attributes_for(:photos) }
 end

@@ -37,7 +37,7 @@ describe User, '#can_edit' do
 
   it "returns true if the user is the landlord of the apartment" do
     landlord = build_stubbed(:landlord)
-    apartment = landlord.apartments.new
+    apartment = build(:apartment, landlord:landlord)
     landlord.can_edit?(apartment).should be_true
   end
 end
