@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   end
 
   def build_favorite
+    # TODO: landlords and tenants should return different types of favorites?
     Favorite.new
   end
 end

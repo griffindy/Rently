@@ -4,14 +4,13 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    tenant_id = params[:tenant_id]
-    apt_id = params[:apt_id]
-    Favorite.create(tenant_id: tenant_id, apartment_id: apt_id)
-    redirect_to tenant_path(current_user.id)
+    # TODO: would be nice to find a way not to have to nest id under apartment
+    Favorite.create(user_id: params[:user_id], apartment_id: params[:apartment][:id])
+    redirect_to dashboard_path
   end
 
   def destroy
     Favorite.find(params[:id]).destroy
-    redirect_to tenant_path(current_user.id)
+    redirect_to dashboard_path
   end
 end

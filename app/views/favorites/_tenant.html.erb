@@ -1,6 +1,6 @@
-<%# <%= form_tag("/tenants/#{current_user.id}/favorites") do %>
-<%#   <%= hidden_field_tag(:apt_id, @apartment.id) %>
-<%#   <%= submit_tag "favorite" %>
-<%# <% end -%>
+<%# <%= button_to 'favorite', user_favorite_path(current_user.id), method: 'post' %>
 
-<%= button_to 'favorite', @favorite, method: post %>
+<%= form_for @favorite, url: user_favorite_path(current_user.id) do |f| %>
+  <%= hidden_field :apartment, :id %>
+  <%= f.submit 'favorite' %>
+<% end %>
