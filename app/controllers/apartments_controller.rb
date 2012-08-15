@@ -12,7 +12,7 @@ class ApartmentsController < ApplicationController
   def create
     @apartment = current_user.apartments.new(params[:apartment])
     if @apartment.save
-      redirect_to [:edit, @apartment], notice: "Apartment Created!"
+      redirect_to dashboard_path, notice: "Apartment Created!"
     else
       # TODO: You will want to display errors on the photo objects
       @photos = @apartment.photos
