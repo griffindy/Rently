@@ -23,4 +23,8 @@ class User < ActiveRecord::Base
   def dashboard_type
     type.downcase
   end
+
+  def build_favorite
+    Favorite.new
+  end
 end

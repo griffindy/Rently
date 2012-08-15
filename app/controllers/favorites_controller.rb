@@ -1,7 +1,8 @@
 class FavoritesController < ApplicationController
   def show
-    
+
   end
+
   def create
     tenant_id = params[:tenant_id]
     apt_id = params[:apt_id]

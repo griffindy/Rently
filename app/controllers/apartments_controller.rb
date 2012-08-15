@@ -23,6 +23,7 @@ class ApartmentsController < ApplicationController
 
   def show
     @apartment = Apartment.find(params[:id])
+    @favorite = current_user.build_favorite
   end
 
   def edit

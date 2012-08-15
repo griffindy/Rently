@@ -5,10 +5,7 @@
   <%= link_to "edit", edit_apartment_path %>
 <% end -%>
 <% if current_user.can_favorite?(@apartment) %>
-  <%= form_tag("/tenants/#{current_user.id}/favorites") do %>
-    <%= hidden_field_tag(:apt_id, @apartment.id) %>
-    <%= submit_tag "favorite" %>
-  <% end -%>
+  <%= render @favorite %>
 <% end -%>
 <% @apartment.photos.each do |photo| %>
   <%= image_tag photo.photo.url(:thumb) %>

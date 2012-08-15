@@ -1,10 +1,8 @@
 Rently::Application.routes.draw do
   root to: 'welcome#index'
   resources :apartments
-  resources :landlords
-  resources :tenants do
-    resources :favorites
-  end
   resource :dashboard, only: [:show]
-  resources :users, controller: 'users', only: [:create]
+  resources :users, controller: 'users', only: [:create] do
+    resource :favorite, only: [:create]
+  end
 end
