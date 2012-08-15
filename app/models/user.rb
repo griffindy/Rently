@@ -23,9 +23,4 @@ class User < ActiveRecord::Base
   def dashboard_type
     type.downcase
   end
-
-  def build_favorite
-    # TODO: landlords and tenants should return different types of favorites?
-    Favorite.new
-  end
 end
