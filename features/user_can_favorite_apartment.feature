@@ -1,14 +1,14 @@
 Feature: A user can favorite an apartment
 
   Scenario: A guest user favorites an apartment
-    Given an apartment exists with address "97 Walden St"
-    And I am viewing an apartment as a guest
-    When I click on the favorite button
+    Given an apartment exists with address "97 Walden Street"
+    And I am viewing an apartment with address "97 Walden Street" as a guest
+    When I favorite the apartment
     Then I should be prompted to sign up
 
   Scenario: A tenant favorites an apartment
-    Given an apartment exists with address "97 Walden St"
-    And I am a tenant and am signed in
-    And I am viewing an apartment page
-    When I click on the favorite button
-    Then I should see the apartment with address "97 Walden St" under my favorites
+    Given an apartment exists with address "97 Walden Street"
+    And I am signed in as a tenant
+    And I am viewing the apartment with address "97 Walden Street"
+    When I favorite the apartment
+    Then I should see the apartment with address "97 Walden Street" under my favorites

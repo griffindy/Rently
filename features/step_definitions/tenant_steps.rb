@@ -1,4 +1,4 @@
-Given 'I am a tenant and am signed in' do
+Given 'I am signed in as a tenant' do
   click_link 'Sign out'
   visit root_path
   click_link 'Sign up'

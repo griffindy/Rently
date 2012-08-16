@@ -3,8 +3,4 @@ class Favorite < ActiveRecord::Base
 
   belongs_to :apartment
   belongs_to :user
-
-  def to_partial_path
-    'favorites/tenant'
-  end
 end

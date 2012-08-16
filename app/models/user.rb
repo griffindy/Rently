@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   include Clearance::User
 
-  USER_ROLES = %w(Landlord Tenant).freeze
+  ROLES = %w(Landlord Tenant).freeze
 
   attr_accessible :email, :role, :name
 

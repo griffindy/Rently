@@ -1,4 +1,4 @@
-When 'I click on the favorite button' do
+When 'I favorite the apartment' do
   click_button 'favorite'
 end
 

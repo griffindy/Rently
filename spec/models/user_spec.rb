@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe User, 'USER_ROLES' do
+describe User, 'ROLES' do
   it 'contains only Landlord and Tenant' do
-    User::USER_ROLES.should == ['Landlord', 'Tenant']
+    User::ROLES.should == ['Landlord', 'Tenant']
   end
 
   it 'is frozen' do
-    User::USER_ROLES.should be_frozen
+    User::ROLES.should be_frozen
   end
 end
 
@@ -37,7 +37,7 @@ describe User, '#can_edit' do
 
   it "returns true if the user is the landlord of the apartment" do
     landlord = build_stubbed(:landlord)
-    apartment = build(:apartment, landlord:landlord)
+    apartment = build(:apartment, landlord: landlord)
     landlord.can_edit?(apartment).should be_true
   end
 end

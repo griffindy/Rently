@@ -18,6 +18,11 @@ Given /^an apartment exists with address "([^"]+)"$/ do |address|
   click_button 'submit'
 end
 
+Given /^I am viewing the apartment with address "([^"]+)"$/ do |address|
+  visit 'apartments'
+  click_link address
+end
+
 When 'I click the link to create a new listing' do
   click_link 'Create a new Listing'
 end
@@ -32,8 +37,4 @@ When /^I fill out the new apartment form for "([^"]+)"$/ do |address|
   fill_in 'Bathrooms', with: '1'
   fill_in 'Description', with: 'this is a nice apartment'
   click_button 'submit'
-end
-
-When 'I am viewing an apartment page' do
-  visit 'apartments/1'
 end

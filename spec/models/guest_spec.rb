@@ -7,7 +7,7 @@ describe Guest, '#can_edit?' do
 end
 
 describe Guest, '#can_favorite?' do
-  it 'returns false' do
+  it 'returns true' do
     Guest.new.can_favorite?('apartment').should be_true
   end
 end

@@ -7,7 +7,7 @@ When /^I fill out the form and upload a photo for "([^"]+)"$/ do |address|
   fill_in 'Bedrooms', with: '2'
   fill_in 'Bathrooms', with: '1'
   fill_in 'Description', with: 'this is a nice apartment'
-  attach_file('Photo', File.join(Rails.root, 'features', 'support', 'house.jpg'))
+  attach_file('Photo', Rails.root.join('features', 'support', 'house.jpg'))
   click_button 'submit'
 end
 
