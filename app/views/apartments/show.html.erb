@@ -5,7 +5,7 @@
   <%= link_to "edit", edit_apartment_path %>
 <% end -%>
 <% if current_user.can_favorite?(@apartment) %>
-  <%= render @favorite %>
+  <%= render "favorites/#{current_user.role.downcase}" %>
 <% end -%>
 <% @apartment.photos.each do |photo| %>
   <%= image_tag photo.photo.url(:thumb) %>

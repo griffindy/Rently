@@ -7,7 +7,7 @@ class Guest
     true
   end
 
-  def build_favorite
-    GuestFavorite.new
+  def role
+    'Guest'
   end
 end

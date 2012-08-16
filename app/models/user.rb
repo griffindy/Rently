@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
   include Clearance::User
 
-  USER_TYPES = %w(Landlord Tenant).freeze
+  USER_ROLES = %w(Landlord Tenant).freeze
 
-  attr_accessible :email, :type, :name
+  attr_accessible :email, :role, :name
 
-  validates :type, presence: true
+  validates :role, presence: true
   validates :name, presence: true
 
   has_many :apartments, foreign_key: "landlord_id", dependent: :destroy
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     favorites.where(apartment_id: apartment.id).empty?
   end
 
-  def dashboard_type
-    type.downcase
+  def dashboard
+    role.downcase
   end
 end

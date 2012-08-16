@@ -9,11 +9,11 @@ FactoryGirl.define do
     password "password"
 
     factory :landlord, class: User do
-      type "Landlord"
+      role "Landlord"
     end
 
     factory :tenant, class: User do
-      type "Tenant"
+      role "Tenant"
     end
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120710185709) do
+ActiveRecord::Schema.define(:version => 20120816001052) do
 
   create_table "apartments", :force => true do |t|
     t.string  "address"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20120710185709) do
     t.string   "remember_token",     :limit => 128
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
-    t.string   "type"
+    t.string   "role"
     t.string   "name"
   end
 

@@ -1,24 +1,24 @@
 require 'spec_helper'
 
-describe User, 'USER_TYPES' do
+describe User, 'USER_ROLES' do
   it 'contains only Landlord and Tenant' do
-    User::USER_TYPES.should == ['Landlord', 'Tenant']
+    User::USER_ROLES.should == ['Landlord', 'Tenant']
   end
 
   it 'is frozen' do
-    User::USER_TYPES.should be_frozen
+    User::USER_ROLES.should be_frozen
   end
 end
 
 describe User, 'mass assignment' do
   it { should allow_mass_assignment_of(:email) }
-  it { should allow_mass_assignment_of(:type) }
+  it { should allow_mass_assignment_of(:role) }
   it { should allow_mass_assignment_of(:name) }
 end
 
 describe User, 'validations' do
   it { should validate_presence_of(:email) }
-  it { should validate_presence_of(:type) }
+  it { should validate_presence_of(:role) }
   it { should validate_presence_of(:name) }
 end
 
@@ -59,14 +59,14 @@ describe User, '#can_favorite?' do
   end
 end
 
-describe User, '#dashboard_type' do
+describe User, '#dashboard' do
   it 'returns "tenant" for a tenant' do
     tenant = build(:tenant)
-    tenant.dashboard_type.should == 'tenant'
+    tenant.dashboard.should == 'tenant'
   end
 
   it 'returns "landlord" for a landlord' do
     landlord = build(:landlord)
-    landlord.dashboard_type.should == 'landlord'
+    landlord.dashboard.should == 'landlord'
   end
 end
