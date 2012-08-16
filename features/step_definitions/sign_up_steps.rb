@@ -3,20 +3,21 @@ Given 'I am on the home page' do
 end
 
 When 'I sign up as a landlord' do
+  visit root_path
   click_link 'Sign up'
   fill_in 'Name', with: 'jim bob'
   fill_in 'Email', with: 'jimbob@google.com'
   fill_in 'Password', with: 'password'
-  select 'Landlord', from: 'Type'
+  select 'Landlord', from: 'Role'
   click_button 'Sign up'
 end
 
 When 'I sign up as a tenant' do
   click_link 'Sign up'
-  fill_in 'Name', with: 'jim bob'
-  fill_in 'Email', with: 'jimbob@google.com'
+  fill_in 'Name', with: 'joe bob'
+  fill_in 'Email', with: 'joebob@google.com'
   fill_in 'Password', with: 'password'
-  select 'Tenant', from: 'Type'
+  select 'Tenant', from: 'Role'
   click_button 'Sign up'
 end
 
