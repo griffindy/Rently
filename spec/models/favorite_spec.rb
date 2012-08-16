@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Favorite, 'mass assignment' do
-  it { should allow_mass_assignment_of(:user_id) }
   it { should allow_mass_assignment_of(:apartment_id) }
 end
 

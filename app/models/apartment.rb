@@ -1,5 +1,5 @@
 class Apartment < ActiveRecord::Base
-  attr_accessible :address, :rent, :city, :zip, :landlord_id, :photos_attributes, :bedrooms, :bathrooms, :state, :description
+  attr_accessible :address, :rent, :city, :zip, :photos_attributes, :bedrooms, :bathrooms, :state, :description
 
   validates :address, presence: true
   validates :rent, presence: true

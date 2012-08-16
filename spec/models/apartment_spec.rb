@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Apartment, 'mass assignment' do
-  %w(address rent city zip landlord_id photos_attributes bedrooms bathrooms state description).each do |attribute|
+  %w(address rent city zip photos_attributes bedrooms bathrooms state description).each do |attribute|
     it { should allow_mass_assignment_of(attribute) }
   end
 end

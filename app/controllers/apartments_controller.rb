@@ -31,7 +31,7 @@ class ApartmentsController < ApplicationController
   end
 
   def update
-    @apartment = Apartment.find(params[:id])
+    @apartment = current_user.apartments.find(params[:id])
     if @apartment.update_attributes(params[:apartment])
       redirect_to [:edit, @apartment], notice: "Updated!"
     else
@@ -40,7 +40,7 @@ class ApartmentsController < ApplicationController
   end
 
   def destroy
-    Apartment.find(params[:id]).destroy
+    current_user.apartments.find(params[:id]).destroy
     redirect_to dashboard_path
   end
 end

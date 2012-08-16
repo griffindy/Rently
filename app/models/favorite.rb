@@ -1,5 +1,5 @@
 class Favorite < ActiveRecord::Base
-  attr_accessible :apartment_id, :user_id
+  attr_accessible :apartment_id
 
   belongs_to :apartment
   belongs_to :user
