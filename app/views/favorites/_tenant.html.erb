@@ -1,6 +1,4 @@
-<%# <%= button_to 'favorite', user_favorite_path(current_user.id), method: 'post' %>
-
-<%= form_for @favorite, url: user_favorite_path(current_user.id) do |f| %>
+<%= form_for Favorite.new, url: user_favorite_path(current_user) do |f| %>
   <%= hidden_field :apartment, :id %>
   <%= f.submit 'favorite' %>
 <% end %>

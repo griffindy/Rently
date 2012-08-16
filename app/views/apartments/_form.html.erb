@@ -33,6 +33,7 @@
   </li>
   <li>
     <%= f.fields_for :photos, @new_photos do |photo| %>
+      <%= photo.label :photo %>
       <%= photo.file_field :photo %>
     <% end -%>
   </li>

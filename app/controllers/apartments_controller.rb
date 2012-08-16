@@ -14,7 +14,6 @@ class ApartmentsController < ApplicationController
     if @apartment.save
       redirect_to dashboard_path, notice: "Apartment Created!"
     else
-      # TODO: You will want to display errors on the photo objects
       @photos = @apartment.photos
       @new_photos = 5.times.map { @apartment.photos.build }
       render :new
@@ -23,7 +22,6 @@ class ApartmentsController < ApplicationController
 
   def show
     @apartment = Apartment.find(params[:id])
-    @favorite = current_user.build_favorite
   end
 
   def edit
